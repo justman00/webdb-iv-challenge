@@ -5,7 +5,9 @@ exports.speisekarte = {
   addDish,
   getDish,
   getRecipes,
-  addRecipe
+  addRecipe,
+  getRecipe,
+  getShoppingList
 };
 
 function getDishes() {
@@ -26,4 +28,20 @@ function getRecipes() {
 
 function addRecipe(recipe) {
   return db("recipes").insert(recipe);
+}
+
+function getRecipe(id) {
+  return db
+    .select("r.name as recipe", "d.name as dish", "r.id", "r.instructions")
+    .from("recipes as r")
+    .innerJoin("dishes as d", { "d.id": "r.dish_id" })
+    .where({ "r.id": id })
+    .first();
+}
+
+function getShoppingList(recipeId) {
+  return db
+    .select("i.name", "ri.quantity")
+    .from("ingredients as ri")
+    .innerJoin("recipe_ingredients as ri", { "ri.recipe_id": recipeId });
 }

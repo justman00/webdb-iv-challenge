@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const dishes = await db.speisekarte.getDishes("dishes");
+    const dishes = await db.speisekarte.getDishes();
     res.status(200).json(dishes);
   } catch (e) {
     console.log(e);

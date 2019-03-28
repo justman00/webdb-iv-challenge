@@ -13,7 +13,7 @@ exports.up = function(knex, Promise) {
         .integer("dish_id")
         .unsigned()
         .notNullable()
-        .references()
+        .references("id")
         .inTable("dishes")
         .onDelete("RESTRICT")
         .onUpdate("CASCADE");
@@ -30,7 +30,7 @@ exports.up = function(knex, Promise) {
         .integer("recipe_id")
         .unsigned()
         .notNullable()
-        .references()
+        .references("id")
         .inTable("recipes")
         .onDelete("RESTRICT")
         .onUpdate("CASCADE");
@@ -39,7 +39,7 @@ exports.up = function(knex, Promise) {
         .integer("ingredient_id")
         .unsigned()
         .notNullable()
-        .references()
+        .references("id")
         .inTable("ingredients")
         .onDelete("RESTRICT")
         .onUpdate("CASCADE");
