@@ -40,8 +40,15 @@ function getRecipe(id) {
 }
 
 function getShoppingList(recipeId) {
+  // return db
+  //   .select("i.name", "ri.quantity")
+  //   .from("ingredients as i")
+  //   .innerJoin("recipe_ingredients as ri", { "ri.recipe_id": recipeId })
+  //   .where({ "ri.recipe_id": recipeId });
+
   return db
     .select("i.name", "ri.quantity")
-    .from("ingredients as ri")
-    .innerJoin("recipe_ingredients as ri", { "ri.recipe_id": recipeId });
+    .from("recipe_ingredients as ri")
+    .innerJoin("ingredients as i", { "ri.ingredient_id": "i.id" })
+    .where({ "ri.recipe_id": recipeId });
 }

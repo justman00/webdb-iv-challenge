@@ -33,4 +33,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+db.speisekarte.getShoppingList(3).then(data => console.log(data));
+
 module.exports = router;
