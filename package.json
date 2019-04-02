@@ -1,0 +1,27 @@
+{
+  "name": "webdb-iv-challenge",
+  "version": "1.0.0",
+  "description": "## Topics",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justman00/webdb-iv-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justman00/webdb-iv-challenge/issues"
+  },
+  "homepage": "https://github.com/justman00/webdb-iv-challenge#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "knex-cleaner": "^1.1.4",
+    "nodemon": "^1.18.10",
+    "sqlite3": "^4.0.6"
+  }
+}
